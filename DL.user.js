@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DL
 // @namespace    https://github.com/MokiyCodes
-// @version      0.1.0
+// @version      0.1.1
 // @description  Download File
 // @updateURL    https://mokiycodes.github.io/GHUS/DL.user.js
 // @downloadURL  https://mokiycodes.github.io/GHUS/DL.user.js
@@ -16,7 +16,7 @@
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true)
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-DL',true);
 (async ()=>{
     let cache = {};
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))();
