@@ -9,12 +9,14 @@
 // @source       https://github.com/MokiyCodes/GHUS/blob/main/AUS.user.js
 // @author       MokiyCodes
 // @match        https://github.com/*
+// @match        https://mokiycodes.github.io/GHUS/*
 // @icon         https://img.mokiy.cc/cached/png?url=https://github.githubassets.com/favicons/favicon-dark.svg&width=4096&height=4096&density=8192
 // @grant        none
 // @run-at       document-end
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true)
 (async ()=>{
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
     setInterval(()=>{
