@@ -17,7 +17,7 @@
 // ==/UserScript==
 
 if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download'))
-  return ()=>document.body.setAttribute('plugin-AUS', true);
+  return ()=>document.body.setAttribute('plugin-RCCM', true);
 (()=>{
   const update = ()=>{
     const y = document.querySelector('#commit-summary-input');
