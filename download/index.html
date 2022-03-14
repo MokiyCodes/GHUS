@@ -8,12 +8,12 @@
     (async()=>{
       const add = (label,path)=>{
         const btn = document.createElement('button');
-        btn.addEventListener('click',()=>window.open(`https://mokiycodes.github.io/GHUS/${path}`));
+        btn.addEventListener('click',()=>window.open(`https://mokiycodes.github.io/GHUS/${path}.user.js`));
         btn.innerText=label;
         document.body.appendChild(btn);
       }
       const list = await (fetch('https://mokiycodes.github.io/GHUS/download/list.json').then(v=>v.json()));
-      add('All','download/all.user.js');
+      add('All','download/all');
       list.forEach(v=>add(v,v));
     })()
   </script>
