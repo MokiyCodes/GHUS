@@ -3,8 +3,8 @@
 // @namespace    https://github.com/MokiyCodes
 // @version      0.1.0
 // @description  Automatically Confirm Repository Names
-// @updateURL    https://mokiycodes.github.io/GHUS/download/all.user.js
-// @downloadURL  https://mokiycodes.github.io/GHUS/download/all.user.js
+// @updateURL    https://mokiycodes.github.io/GHUS/all.user.js
+// @downloadURL  https://mokiycodes.github.io/GHUS/all.user.js
 // @supportURL   https://github.com/MokiyCodes/GHUS/issues
 // @source       https://github.com/MokiyCodes/GHUS/blob/main/download/all.user.js
 // @author       MokiyCodes
