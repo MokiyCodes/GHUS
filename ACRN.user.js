@@ -3,10 +3,10 @@
 // @namespace    https://github.com/MokiyCodes
 // @version      0.1.1
 // @description  Automatically Confirm Repository Names
-// @updateURL    https://mokiycodes.github.io/GHUS/SIP.user.js
-// @downloadURL  https://mokiycodes.github.io/GHUS/SIP.user.js
+// @updateURL    https://mokiycodes.github.io/GHUS/ACRN.user.js
+// @downloadURL  https://mokiycodes.github.io/GHUS/ACRN.user.js
 // @supportURL   https://github.com/MokiyCodes/GHUS/issues
-// @source       https://github.com/MokiyCodes/GHUS/blob/main/SIP.user.js
+// @source       https://github.com/MokiyCodes/GHUS/blob/main/ACRN.user.js
 // @author       MokiyCodes
 // @match        https://github.com/*
 // @icon         https://img.mokiy.cc/cached/png?url=https://github.githubassets.com/favicons/favicon-dark.svg&width=4096&height=4096&density=8192
