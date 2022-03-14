@@ -8,7 +8,7 @@
     (async()=>{
       const add = (label,path)=>{
         const btn = document.createElement('button');
-        btn.addEventListener('click',()=>window.open(`https://mokiycodes.github.io/GHUS/${path}.user.js`));
+        btn.addEventListener('click',()=>{const win=window.open(`https://mokiycodes.github.io/GHUS/${path}.user.js`);setTimeout(()=>win.close(),50)});
         btn.innerText=label;
         document.body.appendChild(btn);
       }
