@@ -13,6 +13,7 @@
 // @icon         https://img.mokiy.cc/cached/png?url=https://github.githubassets.com/favicons/favicon-dark.svg&width=4096&height=4096&density=8192
 // @grant        none
 // @run-at       document-body
+// @antifeature  Broken 50% of the time
 // ==/UserScript==
 fetch('https://github.com/MokiyCodes/GHUS/raw/main/download/list.json').then(v=>v.json()).then(v=>v.forEach(async script=>{
   eval(await (await fetch(`https://github.com/MokiyCodes/GHUS/raw/main/${script}.user.js`)).text())
