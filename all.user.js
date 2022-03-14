@@ -9,6 +9,7 @@
 // @source       https://github.com/MokiyCodes/GHUS/blob/main/download/all.user.js
 // @author       MokiyCodes
 // @match        https://github.com/*
+// @match        https://mokiycodes.github.io/GHUS/*
 // @icon         https://img.mokiy.cc/cached/png?url=https://github.githubassets.com/favicons/favicon-dark.svg&width=4096&height=4096&density=8192
 // @grant        none
 // @run-at       document-body
