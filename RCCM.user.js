@@ -9,14 +9,16 @@
 // @source       https://github.com/MokiyCodes/GHUS/blob/main/RCCM.user.js
 // @author       MokiyCodes
 // @match        https://github.com/*
+// @match        https://mokiycodes.github.io/GHUS/*
 // @icon         https://img.mokiy.cc/cached/png?url=https://github.githubassets.com/favicons/favicon-dark.svg&width=4096&height=4096&density=8192
 // @grant        none
 // @run-at       document-body
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-'use strict';
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true)
 (()=>{
+  'use strict';
   const update = ()=>{
     const y = document.querySelector('#commit-summary-input');
     if (y) {
