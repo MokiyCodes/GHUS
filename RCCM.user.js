@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RCCM
 // @namespace    https://github.com/MokiyCodes
-// @version      0.1.1
+// @version      0.1.2
 // @description  Require Conventional Commit Messages | GitHub
 // @updateURL    https://mokiycodes.github.io/GHUS/RCCM.user.js
 // @downloadURL  https://mokiycodes.github.io/GHUS/RCCM.user.js
@@ -16,9 +16,9 @@
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true)
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download'))
+  return ()=>document.body.setAttribute('plugin-AUS', true);
 (()=>{
-  'use strict';
   const update = ()=>{
     const y = document.querySelector('#commit-summary-input');
     if (y) {
@@ -38,34 +38,36 @@ if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/downloa
         (condition ? ()=>z.removeAttribute('disabled') : ()=>z.setAttribute('disabled', true))();
         z.innerHTML = condition ? 'Commit' : 'Please enter a commit message';
       }
-      const _v = y.value.split(':')
-      if (_v.length===2 && _v[1] === '') _v[1] = ' '
+      const _v = y.value.split(':');
+      if (_v.length === 2 && _v[1] === '')
+        _v[1] = ' ';
       const v = _v.join(':').split(': ');
       if (v.length > 1) {
         v[0] = v[0].toLowerCase();
         switch (v[0]) {
-          case 'f':
-            v[0] = 'fix';
-            break;
-          case 'fi':
-            v[0] = 'fix';
-            break;
-          case 'fe':
-            v[0] = 'feat';
-            break;
-          case 'd':
-            v[0] = 'docs';
-            break;
-          case 'c':
-            v[0] = 'chore';
-            break;
-          case 'r':
-            v[0] = 'refactor';
-            break;
+        case 'f':
+          v[0] = 'fix';
+          break;
+        case 'fi':
+          v[0] = 'fix';
+          break;
+        case 'fe':
+          v[0] = 'feat';
+          break;
+        case 'd':
+          v[0] = 'docs';
+          break;
+        case 'c':
+          v[0] = 'chore';
+          break;
+        case 'r':
+          v[0] = 'refactor';
+          break;
         }
         y.value = v.join(': ');
       }
     }
   };
   setInterval(update, 100);
+  update();
 })();
