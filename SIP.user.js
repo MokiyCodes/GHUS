@@ -21,6 +21,7 @@
     let cache = {};
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
     setInterval(async ()=>{
+        if (!document.querySelector('#raw-url')) return;
         let href = document.location.pathname.split('/');
         href.shift(); // empty string
         const user = href.shift();
@@ -31,11 +32,11 @@
         href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
         if (!cache[href]) {
             try{
-                cache[href] = (await fetch(href)).ok ? 1 : 2;
+                cache[href] = (await fetch(href)).ok;
             }catch(e){
                 cache[href] = 2;
             }
         }
-        if (cache[href] === 1) addButton('See File in Github Pages', href, 100)
+        if (cache[href] === 1) addButton('See File in Github Pages', href)
     },100)
 })()
