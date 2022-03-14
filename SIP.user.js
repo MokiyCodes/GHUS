@@ -40,6 +40,6 @@ if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/downloa
                 cache[href] = 2;
             }
         }
-        if (cache[href] === 1) addButton('See File in Github Pages', href)
+        if (cache[href] === 1) addButton('Github Pages', href)
     },100)
 })()
