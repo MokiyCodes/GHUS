@@ -13,6 +13,6 @@
 // @grant        none
 // @run-at       document-body
 // ==/UserScript==
-(['ACRN','AUS','DL','RCCM','SIP']).forEach(async script=>{
-  eval(await (await fetch(`https://mokiycodes.github.io/GHUS/${script}.user.js`)).text())
-})
+fetch('https://github.com/MokiyCodes/GHUS/raw/main/download/list.json').then(v=>v.json()).then(v=>v.forEach(async script=>{
+  eval(await (await fetch(`https://github.com/MokiyCodes/GHUS/raw/main/${script}.user.js`)).text())
+}))
