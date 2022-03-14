@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SIP
 // @namespace    https://github.com/MokiyCodes
-// @version      0.1.1
-// @description  See (File) In Pages | Assumes current branch is in github pages
+// @version      0.1.2
+// @description  See (File) In Pages
 // @updateURL    https://mokiycodes.github.io/GHUS/SIP.user.js
 // @downloadURL  https://mokiycodes.github.io/GHUS/SIP.user.js
 // @supportURL   https://github.com/MokiyCodes/GHUS/issues
@@ -18,8 +18,9 @@
 // ==/UserScript==
 
 (async ()=>{
+    let cache = {};
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
-    setInterval(()=>{
+    setInterval(async ()=>{
         let href = document.location.pathname.split('/');
         href.shift(); // empty string
         const user = href.shift();
@@ -28,6 +29,14 @@
         const branch = href.shift();
         const file = href.join('/');
         href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
-        addButton('See File in Github Pages', href, 100)
+        if (!cache[href]) {
+            try{
+                await fetch(href)
+                cache[href] = 1;
+            }catch(e){
+                cache[href] = 2;
+            }
+        }
+        if (cache[href] === 1) addButton('See File in Github Pages', href, 100)
     },100)
 })()
