@@ -32,7 +32,8 @@
         href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
         if (!cache[href]) {
             try{
-                cache[href] = (await fetch(href)).ok;
+                cache[href] = 2;
+                cache[href] = (await fetch(href)).ok ? 1 : 2;
             }catch(e){
                 cache[href] = 2;
             }
