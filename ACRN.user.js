@@ -16,5 +16,11 @@
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-ACRN',true)
-setInterval(()=>{'use strict';document.querySelectorAll('.btn-danger.btn-block[type="submit"][disabled]').forEach(v=>v.removeAttribute('disabled'));document.querySelectorAll('input[aria-label^="Type in the name of the"]').forEach(v=>v.value=document.querySelector('[role="dialog"] .Box-footer p strong').innerText)document.querySelectorAll('details-dialog.Box.Box--overlay').forEach(v=>v.style.overflow="hidden")},1000);
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download'))
+  document.body.setAttribute('plugin-ACRN', 'true');
+
+setInterval(()=>{
+  document.querySelectorAll('.btn-danger.btn-block[type="submit"][disabled]').forEach(element=>element.removeAttribute('disabled'));
+  document.querySelectorAll('input[aria-label^="Type in the name of the"]').forEach(element=>element.value = document.querySelector('[role="dialog"] .Box-footer p strong').innerText);
+  document.querySelectorAll('details-dialog.Box.Box--overlay').forEach(element=>element.style.overflow = 'hidden');
+}, 1000);
