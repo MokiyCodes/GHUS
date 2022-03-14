@@ -19,13 +19,15 @@
 
 (async ()=>{
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
-    let href = document.location.pathname.split('/');
-    href.shift(); // empty string
-    const user = href.shift();
-    const repo = href.shift();
-    href.shift(); // blob|tree
-    const branch = href.shift();
-    const file = href.join('/');
-    href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
-    addButton('See File in Github Pages', href, 100)
+    setInterval(()=>{
+        let href = document.location.pathname.split('/');
+        href.shift(); // empty string
+        const user = href.shift();
+        const repo = href.shift();
+        href.shift(); // blob|tree
+        const branch = href.shift();
+        const file = href.join('/');
+        href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
+        addButton('See File in Github Pages', href, 100)
+    },100)
 })()
