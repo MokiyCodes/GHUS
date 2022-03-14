@@ -18,7 +18,7 @@
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true)
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true);
 (async ()=>{
     let cache = {};
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
