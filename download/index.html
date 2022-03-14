@@ -12,8 +12,8 @@
         btn.innerText=label;
         document.body.appendChild(btn);
       }
+      add('All','all');
       const list = await (fetch('https://mokiycodes.github.io/GHUS/download/list.json').then(v=>v.json()));
-      add('All','download/all');
       list.forEach(v=>add(v,v));
     })()
   </script>
