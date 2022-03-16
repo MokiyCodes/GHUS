@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SIP
 // @namespace    https://github.com/MokiyCodes
-// @version      0.1.2
+// @version      0.2.0
 // @description  See (File) In Pages
 // @updateURL    https://mokiycodes.github.io/GHUS/SIP.user.js
 // @downloadURL  https://mokiycodes.github.io/GHUS/SIP.user.js
@@ -31,7 +31,7 @@ if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/downloa
         href.shift(); // blob|tree
         const branch = href.shift();
         let file = href.join('/');
-        file = file.endsWith('README.md') ? file.split('').reverse().join('').replace('dm.EMDAER','').split('').reverse().join('')
+        file = file.endsWith('README.md') ? file.split('').reverse().join('').replace('dm.EMDAER','').split('').reverse().join('') : file;
         href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
         if (!cache[href]) {
             try{
