@@ -18,7 +18,7 @@
 // @antifeature  loop We run a constant loop for each GitHub tab.
 // ==/UserScript==
 
-if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true);
+if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-SIP',true);
 (async ()=>{
     let cache = {};
     const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
@@ -30,7 +30,8 @@ if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/downloa
         const repo = href.shift();
         href.shift(); // blob|tree
         const branch = href.shift();
-        const file = href.join('/');
+        let file = href.join('/');
+        file = file.endsWith('README.md') ? file.split('').reverse().join('').replace('dm.EMDAER','').split('').reverse().join('')
         href = `https://${user}.github.io/${repo}/${file}?branch=${branch}&commit=${document.querySelector('a[href*="/commit/"]')?.getAttribute('href')?.split('/')?.pop() ?? 'unknown'}`;
         if (!cache[href]) {
             try{
