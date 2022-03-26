@@ -18,7 +18,7 @@
 
 if (document.location.href.startsWith('https://mokiycodes.github.io/GHUS/download')) document.body.setAttribute('plugin-AUS',true);
 (async ()=>{
-    const addButton = (new Function(await (fetch('https://mokiycodes.github.io/GHUS/lib/Add-File-Button.js').then(v=>v.text()))))()
+    const addButton = (new Function(await (fetch('https://raw.githubusercontent.com/MokiyCodes/GHUS/main/lib/Add-File-Button.js').then(v=>v.text()))))()
     setInterval(()=>{
         let href = document.location.pathname.split('/');
         const _h = href[href.length-1].toLowerCase()
